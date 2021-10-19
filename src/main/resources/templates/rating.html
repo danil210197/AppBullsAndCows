@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Рейтинг игроков</title>
+    <link rel="stylesheet"
+          href="../css/style.css"
+          th:href="@{/css/style.css}"
+          type="text/css"/>
+</head>
+<body>
+
+<form method="GET" action="/rating" class="containerHistory">
+    <table>
+        <caption>Рейтинг игроков</caption>
+        <tr>
+            <th>Место</th>
+            <th>Игрок</th>
+            <th>Количество побед</th>
+        </tr>
+        <th:block th:each="rating, state : ${ratings}" th:fragment="publicSiteHeader">
+            <tr>
+                <td th:text="${state.count}" align="center"></td>
+                <td th:text="${rating.user}" align="center"></td>
+                <td th:text="${rating.record}" align="center"></td>
+            </tr>
+        </th:block>
+    </table>
+
+
+
+
+
+
+</body>
+</html>

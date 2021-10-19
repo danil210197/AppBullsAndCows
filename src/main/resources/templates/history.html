@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <link rel="stylesheet"
+          href="../css/style.css"
+          th:href="@{/css/style.css}"
+          type="text/css"/>
+    <title>История</title>
+</head>
+<body>
+<h2>История игр</h2>
+<p>
+    <strong>Игрок: </strong><span th:text="${login}"></span>
+</p>
+
+
+    <form method="POST" action="/newGame" class="containerHistory">
+        <table>
+            <caption>История</caption>
+            <tr>
+                <th>Номер истории</th>
+                <th>Дата начала</th>
+                <th>Дата окончания</th>
+                <th>Число сделанных шагов</th>
+                <th>Победа</th>
+                <th>Продолжить</th>
+            </tr>
+            <th:block th:each="history : ${histories}" th:fragment="publicSiteHeader">
+                <tr>
+                    <td th:text="${history.id}" align="center"></td>
+                    <td th:text="${history.getStartDateGame()}" align="center"></td>
+                    <td th:text="${history.getIsWin() == T(bullsAndCows.model.GameResultEnum).YES ? history.getEndDateGame() : ''}" align="center"></td>
+                    <td th:text="${history.steps}" align="center"></td>
+                    <td th:text="${history.isWin}" align="center"></td>
+                    <td align="center">
+                        <a href="proceed?historyId=9" th:attr="href=${'proceed?historyId='+ history.id}">Продолжить -></a>
+<!--                        <input-->
+<!--                               th:id="${history.id}"-->
+<!--                               type="button"-->
+<!--                               value="Продолжить"-->
+<!--                               onclick="funContinue(event)"/>-->
+                    </td>
+                </tr>
+            </th:block>
+        </table>
+        <div class="conNewGame">
+            <input type="submit" class="buttonNewGame" name="newGame" value="Новая игра"/>
+        </div>
+
+        <script>
+            function funContinue(event){
+                let body = "historyId=" + event.target.id;
+                let request = new XMLHttpRequest();
+                request.open("GET", "http://localhost:8080/proceed?" + body, true, "user", "123");
+                request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                request.send();
+                // let status = request.status;
+                // if(status==200)
+                //     document.write("Текст ответа: ")
+                // else if(status==404)
+                //     document.write("Ресурс не найден")
+                // else
+                //     document.write(request.statusText)
+            }
+        </script>
+    </form>
+</body>
+</html>

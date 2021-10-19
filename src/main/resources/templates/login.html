@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Вход</title>
+    <link rel="stylesheet"
+          href="../css/style.css"
+          th:href="@{/css/style.css}"
+          type="text/css"/>
+</head>
+<body>
+
+<div class="containerLogin">
+    <form name='f' action="/login" method='POST'>
+        <h1>Вход в игру "Рога и копыта"</h1>
+        <table class="loginTable">
+            <tr>
+                <td class="tdLogintable">Пользователь:</td>
+                <td class="tdLogintable"><input type='text' name='username' value=''></td>
+            </tr>
+            <tr>
+                <td class="tdLogintable">Пароль:</td>
+                <td class="tdLogintable"><input type='password' name='password' /></td>
+            </tr>
+            <tr>
+                <td class="tdLogintable">
+                    <input name="loginButton" type="submit" value="Войти" class="loginButton"/>
+                </td>
+            </tr>
+        </table>
+        <span>Если вы не зарегистрированы, то
+            <a th:href="@{reg}">зарегистрируйтесь</a>
+         </span>
+    </form>
+</div>
+</body>
+</html>

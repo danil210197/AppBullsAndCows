@@ -1,0 +1,121 @@
+table {
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+    border: 1px solid black;
+    border-spacing: 6px;
+}
+
+
+caption {
+    text-align: left;
+    margin-left: 4px;
+    font-size: 20px;
+}
+
+th {
+    background: #b0e0e6;
+    font-size: 20px
+}
+
+.userStep{
+    font-weight: bolder;
+    font-size: 19px;
+}
+
+.panelGame{
+    display: flex;
+    flex-direction: row;
+}
+
+.containerUserStep{
+    margin-top: 18px;
+    margin-left: 20px;
+}
+
+.containerReg {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 390px;
+
+}
+
+.containerRegInner {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+
+.regtext{
+    font-size: 20px;
+}
+
+.submittxt {
+    font-size: 20px;
+}
+
+.buttonSubmit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.textIndex {
+    font-size: 16px;
+}
+.loginButton {
+    height: 30px;
+    width: 150px;
+}
+
+.loginTable {
+    width: 300px;
+    border-collapse: collapse;
+    border: 2px solid white;
+}
+
+.tdLogintable {
+    border: 2px solid white;
+}
+
+.errorAnswer{
+    color: red;
+    font-size: 15px;
+}
+
+.containerLogin{
+    display: flex;
+    justify-content: center;
+}
+
+.containerHistory {
+    display: flex;
+}
+
+.conNewGame{
+    color: red;
+}
+
+.buttonNewGame {
+    margin-left: 10px;
+    margin-top: 23px;
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+}
+
+
+
+
+
+

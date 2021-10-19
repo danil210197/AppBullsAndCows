@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <link rel="stylesheet"
+          href="../css/style.css"
+          th:href="@{/css/style.css}"
+          type="text/css"/>
+    <title>Быки и коровы</title>
+</head>
+<body>
+<h1>Игра "Быки и коровы"</h1>
+<p>
+    <strong>Игрок: </strong><span th:text="${login}"></span>
+</p>
+
+<form name="gameForm" method="POST" action="/stepUser">
+
+    <a th:href="@{history}" class="textMain" href="history.html">Назад</a>
+
+    <div class="panelGame">
+        <table>
+            <caption>
+                Номер истории № <span th:text="${history.id}"></span>
+            </caption>
+            <tr>
+                <th>Ход игрока</th>
+                <th>Ответ компьютера</th>
+            </tr>
+            <th:block th:each="gameStep : ${gameSteps}" th:fragment="publicSiteHeader">
+                <tr>
+                    <td th:text="${gameStep.stepUser}" align="center"></td>
+                    <td th:text="${gameStep.answer}" align="center"></td>
+                </tr>
+            </th:block>
+        </table>
+
+        <div class="containerUserStep">
+            <span class="userStep">Ход игрока:</span> <input name="stepUser" type="text" pattern="[0-9]{4}"/>
+            <input type="submit"   th:disabled="${history.isGameOver()}" value="Предложить число"/>
+            <br>
+            <span th:text="${errorAnswer}" class="errorAnswer"></span>
+
+        </div>
+
+    </div>
+
+</form>
+
+</body>
+</html>
