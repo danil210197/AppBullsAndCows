@@ -44,11 +44,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .defaultSuccessUrl("/history", true)
+                .defaultSuccessUrl("/history", false)
                 .and()
                 .logout()
                 .permitAll()
-                .logoutSuccessUrl("/history");
+                .logoutSuccessUrl("/");
 
     }
 
@@ -66,3 +66,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/h2-console/**");
     }
 }
+
+
+
+
+

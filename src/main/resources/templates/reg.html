@@ -8,13 +8,14 @@
           th:href="@{/css/style.css}"
           type="text/css"/>
 
+
 </head>
 <body class="mainContainer">
 
 <form name="formReg" action="/reg" method="POST" th:object="${user}">
     <div class="containerReg">
+            <h1>Регистрация</h1>
 
-        <h1>Регистрация</h1>
         <div class="containerRegInner">
             <div><span class="regtext">Логин:</span></div>
             <div><input type="text" name="login" th:field="*{login}"/></div>

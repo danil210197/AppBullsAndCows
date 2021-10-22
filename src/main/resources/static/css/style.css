@@ -50,6 +50,13 @@ th {
     align-items: center;
 }
 
+.containerRegtext {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    align-items: center;
+}
+
 .regtext{
     font-size: 20px;
 }
@@ -81,11 +88,16 @@ th {
 .loginTable {
     width: 300px;
     border-collapse: collapse;
-    border: 2px solid white;
+    border: 2px solid powderblue;
 }
 
 .tdLogintable {
-    border: 2px solid white;
+    border: 2px solid powderblue;
+}
+
+.textLink{
+    font-size: 18px;
+    font-family: "Comic Sans MS";
 }
 
 .errorAnswer{
@@ -113,7 +125,13 @@ th {
     height: 40px;
     font-size: 18px;
 }
+.mainContainer{
+    background-color: powderblue;
+}
 
+.mainConLogin{
+    background-color: powderblue;
+}
 
 
 
